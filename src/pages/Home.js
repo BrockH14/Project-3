@@ -1,12 +1,14 @@
-import React from "react";
+import React, { Component } from "react";
 import Form from "../components/Form";
+import { render } from "@testing-library/react";
 
-function Home() {
+class Home extends Component {
     state = {
         saved: [],
         q: "",
     }
 
+    render() {
     return (
         <div>
             <Form
@@ -16,6 +18,7 @@ function Home() {
             />
         </div>
     )
+    }
 }
 
 export default Home;
