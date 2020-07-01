@@ -1,12 +1,18 @@
 .jumbotron {
   margin: auto;
   width: 90%;
+  box-shadow: 10px 10px 15px -5px lightgrey;
+  margin-top: 1.5em;
 }
 input {
   margin-bottom: 2.5em;
   margin-top: 2.5em;
+  box-shadow: 10px 10px 15px -5px lightgrey;
 }
 .my-container {
   margin: auto;
   width: 90%;
+}
+.card {
+  box-shadow: 10px 10px 15px -5px lightgrey;
 }
