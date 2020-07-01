@@ -10,7 +10,7 @@ function Cards() {
                 <div className="card-body">
                     <h5 className="card-title">Item Title</h5>
                     <p className="card-text">Item Description</p>
-                    <a href="#" className="btn btn-primary">Go somewhere</a>
+                    <button className="btn btn-primary">Go somewhere</button>
                 </div>
             </div>
         </div>
