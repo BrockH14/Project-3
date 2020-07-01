@@ -5,13 +5,14 @@ import Navbar from "./components/Navbar";
 import Jumbotron from "./components/Jumbotron";
 import Cards from "./components/Cards";
 import Profile from "./pages/Profile";
+import Home from './pages/Home';
 
 function App() {
   return (
     <Router>
       <div>
         <Navbar />
-        <Route exact path="/" />
+        <Route exact path="/" component={Home}/>
         <Route exact path="/profile" component={Profile} />
         <Jumbotron />
         <Cards />
