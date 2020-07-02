@@ -2,32 +2,30 @@ import React from "react";
 
 function Form({ q, handleInputChange, handleFormSubmit }) {
   return (
-    <form>
-      <div className="form-group">
-        <label htmlFor="Query">
-          <strong>item</strong>
-        </label>
-        <input
-          className="form-control"
-          id="Name"
-          type="text"
-          value={q}
-          placeholder="placeholder"
-          name="q"
-          onChange={handleInputChange}
-          required
-        />
-      </div>
-      <div className="pull-right">
-        <button
-          onClick={handleFormSubmit}
-          type="submit"
-          className="btn btn-lg search float-right"
-        >
-          Search
-        </button>
-      </div>
-    </form>
+    <div className="my-container">
+        <form>
+            <div className="row">
+                <div className="col-11">
+                    <input id="name"
+                     value={q} 
+                     className="input-group" 
+                     type="text" 
+                     placeholder="Search..." 
+                     name="q"
+                     onChange={handleInputChange}
+                     required
+                     ></input>
+                </div>
+                <div className="col-1">
+                    <input 
+                    type="submit" 
+                    placeholder="Submit"
+                    onClick={handleFormSubmit}
+                    ></input>
+                </div>
+            </div>
+        </form>
+    </div>
   );
 }
 
