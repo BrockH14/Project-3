@@ -8,6 +8,20 @@ class Home extends Component {
         q: "",
     }
 
+    handleInputChange = event => {
+        const {name, value} = event.target;
+
+        this.setState({
+            [name]: value
+        });
+    }
+
+    handleFormSubmit = event => {
+        event.preventDefault();
+        
+        
+    }
+
     render() {
     return (
         <div>
