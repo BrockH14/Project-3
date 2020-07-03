@@ -13,7 +13,14 @@ axios.get('https://api.rainforestapi.com/request', { params })
   .then(response => {
 
     // print the JSON response from Rainforest API
-    console.log(JSON.stringify(response.data, 0, 2));
+    // console.log(JSON.stringify(response.data, 0, 2));
+    let product = {
+      title: response.data.product.title,
+      image: response.data.product.main_image.link,
+      price: response.data.product.buybox_winner.price.value,
+      link: response.data.product.link
+    }
+
 
   }).catch(error => {
     // catch and print the error
