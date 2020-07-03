@@ -18,8 +18,12 @@ class Home extends Component {
 
     handleFormSubmit = event => {
         event.preventDefault();
-        
-        
+        API.get().then(res => this.setState({
+            saved: res.data
+        }).catch(err => console.log(err)));
+        console.log(“this is the saved state.“);
+        console.log(this.state.saved);
+        console.log(this.state.q);
     }
 
     render() {
