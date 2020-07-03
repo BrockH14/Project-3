@@ -1,8 +1,35 @@
-.jumbotron {
-  margin: auto;
-  width: 90%;
-  box-shadow: 10px 10px 15px -5px lightgrey;
-  margin-top: 1.5em;
+.hero {
+  height: ;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.hero::after {
+  content: "";
+  display: block;
+  opacity: .3;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: black;
+}
+
+.hero * {
+  position: relative;
+  z-index: 2;
+}
+
+.hero h1, .hero h2 {
+  color: white;
+}
+
+.hero h1 {
+  font-size: 60px;
+  padding-top: 200px;
+  margin-top: 0;
 }
 input {
   margin-bottom: 2.5em;
