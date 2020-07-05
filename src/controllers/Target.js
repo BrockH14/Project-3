@@ -1,7 +1,7 @@
 const axios = require("axios");
 module.exports = {
     TargetFind: function(req) {
-        axios({
+        return axios({
             "method":"GET",
             "url":"https://target-com-store-product-reviews-locations-data.p.rapidapi.com/product/search",
             "headers":{

@@ -10,7 +10,9 @@ class Home extends Component {
         q: "",
         results: []
     }
-
+    getResults(){
+        console.log(this.state.results);
+    }
     handleInputChange = event => {
         this.setState({ q: event.target.value });
     }
@@ -27,7 +29,23 @@ class Home extends Component {
         // }).catch(err => console.log(err));
 
 
-        // TargetAPI.TargetFind(this.state.q)
+        TargetAPI.TargetFind(this.state.q).then(
+                response => {
+                    for (var i = 0; i < 25; i++) {
+                
+                        let product = {
+                          title: response.data.products[i].title,
+                          image: response.data.products[i].images[0].base_url + response.data.products[i].images[0].primary,
+                          price: response.data.products[i].price.current_retail,
+                          link: "target.com" + response.data.products[i].url
+                        }
+                        console.log(product)
+                        this.setState({
+                            results: product
+                        })
+                      }
+                this.getResults();
+            }).catch(err => console.log(err));
 
         
 
@@ -38,7 +56,7 @@ class Home extends Component {
         //     })
         // }).catch(err => console.log(err));
             
-        console.log(this.state.results);
+        
     }
     
     render() {
