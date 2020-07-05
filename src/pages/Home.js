@@ -1,41 +1,49 @@
 import React, { Component } from "react";
 import Form from "../components/Form";
 import { render } from "@testing-library/react";
-import Hero from "../components/Hero";
+import API from "../utils/API";
+import WalmartAPI from "../controllers/Walmart";
+import AmazonAPI from "../controllers/Amazon";
 
 class Home extends Component {
-  state = {
-    saved: [],
-    q: "",
-  };
+    state = {
+        saved: [],
+        q: "",
+        results: []
+    }
 
-  handleInputChange = (event) => {
-    const { name, value } = event.target;
+    handleInputChange = event => {
+        this.setState({ q: event.target.value });
+    }
 
-    this.setState({
-      [name]: value,
-    });
-  };
-
-  handleFormSubmit = (event) => {
-    event.preventDefault();
-  };
-
-  render() {
-    return (
-      <div>
-        <Hero backgroundImage="https://www.monsterinsights.com/wp-content/uploads/2019/11/breathtaking-online-shopping-statistics-you-never-knew-625x300.png">
-          <h1>Shopalooza</h1>
-          <h2>Compare tons of different products!</h2>
-        </Hero>
-        <Form
-          handleInputChange={this.handleInputChange}
-          handleFormSubmit={this.handleFormSubmit}
-          q={this.state.q}
-        />
-      </div>
-    );
-  }
+    handleFormSubmit = event => {
+        event.preventDefault();
+        // API.get().then(res => this.setState({
+        //     saved: res.data
+        // }).catch(err => console.log(err)));
+        // console.log("this is the saved state.");
+        // console.log(this.state.saved);
+        AmazonAPI.AmazonFind(this.state.q).then(
+            res => {
+                this.setState({
+                results: res
+            })
+        }).catch(err => console.log(err));
+            
+        console.log(this.state.results);
+    }
+    
+    render() {
+        return (
+            <div>
+                <Form
+                    handleInputChange={this.handleInputChange}
+                    handleFormSubmit={this.handleFormSubmit}
+                    q={this.state.q}
+                />
+            </div>
+    )
+    }
 }
 
 export default Home;

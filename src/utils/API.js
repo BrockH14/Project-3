@@ -10,7 +10,7 @@ export default {
     return axios.get("/api/");
   },
   // Gets with the given id
-  get: function(id) {
+  getSavedById: function(id) {
     return axios.get("/api/saved/" + id);
   },
   // Deletes with the given id
