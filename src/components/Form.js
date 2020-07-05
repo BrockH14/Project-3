@@ -1,18 +1,18 @@
 import React from "react";
 
-function Form({ q, handleInputChange, handleFormSubmit }) {
+function Form(props) {
   return (
     <div className="my-container">
         <form>
             <div className="row">
                 <div className="col-11">
                     <input id="name"
-                     value={q} 
+                     value={props.q} 
                      className="input-group" 
                      type="text" 
                      placeholder="Search..." 
                      name="q"
-                     onChange={handleInputChange}
+                     onChange={props.handleInputChange}
                      required
                      ></input>
                 </div>
@@ -20,7 +20,7 @@ function Form({ q, handleInputChange, handleFormSubmit }) {
                     <input 
                     type="submit" 
                     placeholder="Submit"
-                    onClick={handleFormSubmit}
+                    onClick={props.handleFormSubmit}
                     ></input>
                 </div>
             </div>
