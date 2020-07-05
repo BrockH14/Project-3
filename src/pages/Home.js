@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import Form from "../components/Form";
-import { render } from "@testing-library/react";
-import API from "../utils/API";
 import WalmartAPI from "../controllers/Walmart";
 import AmazonAPI from "../controllers/Amazon";
+import TargetAPI from "../controllers/Target"
 
 class Home extends Component {
     state = {
@@ -18,17 +17,26 @@ class Home extends Component {
 
     handleFormSubmit = event => {
         event.preventDefault();
-        // API.get().then(res => this.setState({
-        //     saved: res.data
-        // }).catch(err => console.log(err)));
-        // console.log("this is the saved state.");
-        // console.log(this.state.saved);
-        AmazonAPI.AmazonFind(this.state.q).then(
-            res => {
-                this.setState({
-                results: res
-            })
-        }).catch(err => console.log(err));
+
+
+        // WalmartAPI.WalmartFind(this.state.q).then(
+        //     res => {
+        //         this.setState({
+        //         results: res
+        //     })
+        // }).catch(err => console.log(err));
+
+
+        // TargetAPI.TargetFind(this.state.q)
+
+        
+
+        // AmazonAPI.AmazonFind(this.state.q).then(
+        //     res => {
+        //         this.setState({
+        //         results: res
+        //     })
+        // }).catch(err => console.log(err));
             
         console.log(this.state.results);
     }
