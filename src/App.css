@@ -16,3 +16,10 @@ input {
 .card {
   box-shadow: 10px 10px 15px -5px lightgrey;
 }
+.item-img {
+  width: 25%;
+  height: 25%;
+}
+a {
+  color: white;
+}
