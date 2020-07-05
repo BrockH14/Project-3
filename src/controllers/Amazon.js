@@ -18,13 +18,13 @@ module.exports = {
 
         // print the JSON response from Rainforest API
         // console.log(JSON.stringify(response.data, 0, 2));
-
+        console.log(response);
       for (var i = 0; i < 25; i++) {
         
         let product = {
           title: response.data.search_results[i].title,
           image: response.data.search_results[i].image,
-          price: response.data.search_results[i].prices[0].value,
+          price: response.data.search_results[i].prices[0].raw,
           link: response.data.search_results[i].link
         }
         console.log(product)
@@ -37,6 +37,8 @@ module.exports = {
         // catch and print the error
         console.log(error);
       })
+
+      
   }
 }
 
