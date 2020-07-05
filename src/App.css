@@ -4,9 +4,8 @@
   box-shadow: 10px 10px 15px -5px lightgrey;
   margin-top: 1.5em;
 }
-input, .btn {
+input {
   margin-bottom: 2.5em;
-  margin-top: 2.5em;
   box-shadow: 10px 10px 15px -5px lightgrey;
   border: lightgrey solid 1px;
   border-radius: 4px;
@@ -34,13 +33,20 @@ input, .btn {
   float: right !important;
 }
 .card-body {
-  padding: 5px;
-  margin-bottom: 1em;
+  padding: 0px;
+  margin-bottom: -10px;
 }
 a {
   color: black;
 }
 .btn {
   position: relative;
-  top: 3px;
+  bottom: 2px;
+  margin-bottom: 2.5em;
+  box-shadow: 10px 10px 15px -5px lightgrey;
+  border: lightgrey solid 1px;
+  border-radius: 4px;
+}
+form {
+  margin-top: 2em;
 }
