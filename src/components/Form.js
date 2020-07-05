@@ -17,11 +17,11 @@ function Form(props) {
                      ></input>
                 </div>
                 <div className="col-1">
-                    <input 
+                    <button 
+                    className="btn btn-primary btn-sm"
                     type="submit" 
-                    placeholder="Submit"
                     onClick={props.handleFormSubmit}
-                    ></input>
+                    >Search</button>
                 </div>
             </div>
         </form>

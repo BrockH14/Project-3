@@ -33,14 +33,15 @@ class Home extends Component {
 
         TargetAPI.TargetFind(this.state.q).then(
                 response => {
-                    for (var i = 0; i < 25; i++) {
+                    for (var i = 0; i < 15; i++) {
                 
                         let product = 
                             {
                             title: response.data.products[i].title,
                             image: response.data.products[i].images[0].base_url + response.data.products[i].images[0].primary,
-                            price: response.data.products[i].price.current_retail,
-                            link: "target.com" + response.data.products[i].url
+                            price: response.data.products[i].price.formatted_current_price,
+                            link: "target.com" + response.data.products[i].url,
+                            storeName: "Target"
                             }
                         itemArr.push(product);
                         //console.log(product)

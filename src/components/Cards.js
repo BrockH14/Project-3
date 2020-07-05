@@ -4,15 +4,14 @@ function Cards(props) {
     return (
         <div className="my-container">
             {props.results.map(result => (
-                <div key={result} className="card">
+                <div key={result} className="card text-center">
                     <div className="card-header">
-                        Store Name
+                        <h3><i class="fas fa-bullseye target-logo"></i> {result.storeName}</h3>
                     </div>
                     <img src={result.image} className="card-img-top item-img" alt="..."></img>
                     <div className="card-body">
-                            <h5 className="card-title">{result.title}</h5>
-                            <p className="card-text">{result.price}</p>
-                            
+                            <a href={result.link}><h5 className="card-title">{result.title}</h5></a>
+                            <h4 className="card-title item-price">{result.price}</h4>
                             <a href={result.link}><button className="btn btn-primary">Go To Item</button></a>
                     </div>
                 </div>
