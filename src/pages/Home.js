@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Form from "../components/Form";
+import Cards from "../components/Cards";
 import WalmartAPI from "../controllers/Walmart";
 import AmazonAPI from "../controllers/Amazon";
 import TargetAPI from "../controllers/Target"
@@ -28,23 +29,26 @@ class Home extends Component {
         //     })
         // }).catch(err => console.log(err));
 
+        const itemArr = [];
 
         TargetAPI.TargetFind(this.state.q).then(
                 response => {
                     for (var i = 0; i < 25; i++) {
                 
-                        let product = {
-                          title: response.data.products[i].title,
-                          image: response.data.products[i].images[0].base_url + response.data.products[i].images[0].primary,
-                          price: response.data.products[i].price.current_retail,
-                          link: "target.com" + response.data.products[i].url
-                        }
-                        console.log(product)
+                        let product = 
+                            {
+                            title: response.data.products[i].title,
+                            image: response.data.products[i].images[0].base_url + response.data.products[i].images[0].primary,
+                            price: response.data.products[i].price.current_retail,
+                            link: "target.com" + response.data.products[i].url
+                            }
+                        itemArr.push(product);
+                        //console.log(product)
                         this.setState({
-                            results: product
+                            results: itemArr
                         })
+                        this.getResults();
                       }
-                this.getResults();
             }).catch(err => console.log(err));
 
         
@@ -66,6 +70,9 @@ class Home extends Component {
                     handleInputChange={this.handleInputChange}
                     handleFormSubmit={this.handleFormSubmit}
                     q={this.state.q}
+                />
+                <Cards 
+                results={this.state.results}
                 />
             </div>
     )
