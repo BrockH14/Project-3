@@ -4,10 +4,12 @@
   box-shadow: 10px 10px 15px -5px lightgrey;
   margin-top: 1.5em;
 }
-input {
+input, .btn {
   margin-bottom: 2.5em;
   margin-top: 2.5em;
-  
+  box-shadow: 10px 10px 15px -5px lightgrey;
+  border: lightgrey solid 1px;
+  border-radius: 4px;
 }
 .my-container {
   margin: auto;
@@ -15,11 +17,30 @@ input {
 }
 .card {
   box-shadow: 10px 10px 15px -5px lightgrey;
+  margin-bottom: 2em;
 }
 .item-img {
-  width: 25%;
-  height: 25%;
+  width: 17%;
+  height: 17%;
+  margin: auto 41%;
+}
+.item-price {
+  color: green;
+}
+.target-logo {
+  color: red;
+}
+.item-desc {
+  float: right !important;
+}
+.card-body {
+  padding: 5px;
+  margin-bottom: 1em;
 }
 a {
-  color: white;
+  color: black;
+}
+.btn {
+  position: relative;
+  top: 3px;
 }
