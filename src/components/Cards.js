@@ -12,7 +12,7 @@ function Cards(props) {
                     <div className="card-body">
                             <a href={result.link}><h5 className="card-title">{result.title}</h5></a>
                             <h4 className="card-title item-price">{result.price}</h4>
-                            <a href={result.link}><button className="btn btn-primary">Go To Item</button></a>
+                            <a href={result.link}><button className="btn btn-primary">Save Item</button></a>
                     </div>
                 </div>
             ))}
