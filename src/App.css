@@ -33,8 +33,9 @@
 }
 input {
   margin-bottom: 2.5em;
-  margin-top: 2.5em;
-  
+  box-shadow: 10px 10px 15px -5px lightgrey;
+  border: lightgrey solid 1px;
+  border-radius: 4px;
 }
 .my-container {
   margin: auto;
@@ -42,4 +43,37 @@ input {
 }
 .card {
   box-shadow: 10px 10px 15px -5px lightgrey;
+  margin-bottom: 2em;
+}
+.item-img {
+  width: 17%;
+  height: 17%;
+  margin: auto 41%;
+}
+.item-price {
+  color: green;
+}
+.target-logo {
+  color: red;
+}
+.item-desc {
+  float: right !important;
+}
+.card-body {
+  padding: 0px;
+  margin-bottom: -10px;
+}
+a {
+  color: black;
+}
+.btn {
+  position: relative;
+  bottom: 2px;
+  margin-bottom: 2.5em;
+  box-shadow: 10px 10px 15px -5px lightgrey;
+  border: lightgrey solid 1px;
+  border-radius: 4px;
+}
+form {
+  margin-top: 2em;
 }

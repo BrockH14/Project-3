@@ -16,23 +16,7 @@ module.exports = {
             "store_id":"3991",
             "keyword":req
             }
-            })
-            .then(response => {
-
-                // print the JSON response from Rainforest API
-                // console.log(JSON.stringify(response.data, 0, 2));
-                console.log(response);
-              for (var i = 0; i < 25; i++) {
-                
-                let product = {
-                  title: response.data.products[i].title,
-                  image: response.data.products[i].images[0].base_url + response.data.products[i].images[0].primary,
-                  price: response.data.products[i].price.current_retail,
-                  link: "target.com" + response.data.products[i].url
-                }
-                console.log(product)
-              }
-              }).catch(error => {
+            }).catch(error => {
                 // catch and print the error
                 console.log(error);
               })
