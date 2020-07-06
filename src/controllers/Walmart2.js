@@ -1,28 +1,24 @@
 const axios = require("axios");
 
 module.exports = {
-    WalmartFindURL: function(req) {
-
-       return axios({
+    WalmartFind: function(req) {
+        return axios({
             "method":"GET",
-            "url":"https://axesso-walmart-data-service.p.rapidapi.com/wlm/walmart-search-by-keyword",
+            "url":"https://axesso-walmart-data-service.p.rapidapi.com/wlm/walmart-lookup-product",
             "headers":{
             "content-type":"application/octet-stream",
             "x-rapidapi-host":"axesso-walmart-data-service.p.rapidapi.com",
-            "x-rapidapi-key":"7c1420d017mshe6508c373b28efap1c3cc9jsn09b491aa2128",
+            "x-rapidapi-key":"a60de64e9amshbc8b025a1d49262p15a2afjsn89c21e842c0c",
             "useQueryString":true
             },"params":{
-            "sortBy":"best_match",
-            "page":"1",
-            "keyword": req,
-            "type":"text"
+            "url": "https://www.walmart.com" + req
             }
             })
             .then((response)=>{
-                return response
+            return response
             })
             .catch((error)=>{
             console.log(error)
             })
-        }
+    }
 }
