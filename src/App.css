@@ -19,9 +19,10 @@ input {
   margin-bottom: 2em;
 }
 .item-img {
-  width: 17%;
-  height: 17%;
+  width: 16%;
+  height: 16%;
   margin: auto 41%;
+  margin-top: 5px;
 }
 .item-price {
   color: green;
