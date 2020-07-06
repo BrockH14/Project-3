@@ -17,11 +17,7 @@ module.exports = {
             "keyword": req,
             "type":"text"
             }
-            })
-            .then((response)=>{
-                return response
-            })
-            .catch((error)=>{
+            }).catch((error)=>{
             console.log(error)
             })
         }

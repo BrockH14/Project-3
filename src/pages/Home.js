@@ -12,29 +12,40 @@ class Home extends Component {
         q: "",
         wq: [],
         results: [],
-        amazonResults: []
+        amazonResults: [],
+        walmartResults: []
     }
     getResults(){
         console.log(this.state.results);
         console.log(this.state.amazonResults);
+        console.log(this.state.walmartResults);
     }
+
     getWalmart(){
-        console.log(this.state.wq);
+        //console.log(this.state.wq);
         
+            const walmartArr = [];
+
             WalmartAPI2.WalmartFind(this.state.wq).then(
                 response => {
+                    console.log(response);
+                    var key = 0;
+                    for (var i = 0; i < 15; i++) {
                         let product = 
                             {
                             title: response.data.productTitle,
                             image: response.data.imageUrlList[0],
                             price: response.data.price,
-                            link: "https://www.walmart.com" + this.state.wq
+                            link: "https://www.walmart.com" + this.state.wq,
+                            store: "Walmart",
+                            uniqueKey: key++
                             }
-                        //console.log(product)
+                        walmartArr.push(product);
                         this.setState({
-                            results: product
+                            walmartResults: walmartArr
                         })
                         this.getResults();
+                    }
             }).catch(err => console.log(err));
     }
 
@@ -49,10 +60,12 @@ class Home extends Component {
         .then(
             res => {
                 console.log(res);
-                for (var i = 0; i < 25; i++) {
+                const urlArr = [];
+                for (var i = 0; i < 15; i++) {
                     let url = res.data.foundProducts[i]
+                    urlArr.push(url);
                     this.setState({
-                        wq: url
+                        wq: urlArr
                     })
                     this.getWalmart();
             }
@@ -115,6 +128,7 @@ class Home extends Component {
                 <Cards 
                 results={this.state.results}
                 amazonResults={this.state.amazonResults}
+                walmartResults={this.state.walmartResults}
                 />
             </div>
     )
