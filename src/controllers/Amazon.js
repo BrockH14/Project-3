@@ -6,7 +6,7 @@ module.exports = {
   AmazonFind: function(req) {
     
     const params = {
-      api_key: "2BBB8D2E7D12488CA962C43FD12E91F8",
+      api_key: "A510E407AB624CB79E1B1EB2AC38C2D7",
       type: "search",
       amazon_domain: "amazon.com",
       search_term: req, //search term will be edited with user input
