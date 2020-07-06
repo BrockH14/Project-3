@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import Form from "../components/Form";
 import Cards from "../components/Cards";
-import WalmartAPI from "../controllers/Walmart";
 import AmazonAPI from "../controllers/Amazon";
 import TargetAPI from "../controllers/Target"
 
@@ -9,10 +8,12 @@ class Home extends Component {
     state = {
         saved: [],
         q: "",
-        results: []
+        results: [],
+        amazonResults: []
     }
     getResults(){
         console.log(this.state.results);
+        console.log(this.state.amazonResults);
     }
     handleInputChange = event => {
         this.setState({ q: event.target.value });
@@ -20,14 +21,6 @@ class Home extends Component {
 
     handleFormSubmit = event => {
         event.preventDefault();
-
-
-        // WalmartAPI.WalmartFind(this.state.q).then(
-        //     res => {
-        //         this.setState({
-        //         results: res
-        //     })
-        // }).catch(err => console.log(err));
 
         const itemArr = [];
 
@@ -41,7 +34,8 @@ class Home extends Component {
                             image: response.data.products[i].images[0].base_url + response.data.products[i].images[0].primary,
                             price: response.data.products[i].price.formatted_current_price,
                             link: "target.com" + response.data.products[i].url,
-                            storeName: "Target"
+                            storeName: "Target",
+                            uniqueKey: i
                             }
                         itemArr.push(product);
                         //console.log(product)
@@ -51,17 +45,27 @@ class Home extends Component {
                         this.getResults();
                       }
             }).catch(err => console.log(err));
-
         
+        const amazonItemArr = [];
 
-        // AmazonAPI.AmazonFind(this.state.q).then(
-        //     res => {
-        //         this.setState({
-        //         results: res
-        //     })
-        // }).catch(err => console.log(err));
-            
-        
+        AmazonAPI.AmazonFind(this.state.q).then(
+            response => {
+                for (var i = 0; i < 15; i++) {
+                    let amazonItem = {
+                        title: response.data.search_results[i].title,
+                        image: response.data.search_results[i].image,
+                        price: response.data.search_results[i].prices[0].raw,
+                        link: response.data.search_results[i].link,
+                        store: "Amazon",
+                        uniqueKey: i
+                      }
+                      amazonItemArr.push(amazonItem);
+                      this.setState({
+                          amazonResults: amazonItemArr
+                      })
+                      this.getResults();
+                }
+            }).catch(err => console.log(err));
     }
     
     render() {
@@ -74,6 +78,7 @@ class Home extends Component {
                 />
                 <Cards 
                 results={this.state.results}
+                amazonResults={this.state.amazonResults}
                 />
             </div>
     )

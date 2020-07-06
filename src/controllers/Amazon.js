@@ -14,26 +14,7 @@ module.exports = {
     }
     // make the http GET request to Rainforest API
     return axios.get('https://api.rainforestapi.com/request', { params })
-      .then(response => {
-
-        // print the JSON response from Rainforest API
-        // console.log(JSON.stringify(response.data, 0, 2));
-        console.log(response);
-      for (var i = 0; i < 25; i++) {
-        
-        let product = {
-          title: response.data.search_results[i].title,
-          image: response.data.search_results[i].image,
-          price: response.data.search_results[i].prices[0].raw,
-          link: response.data.search_results[i].link
-        }
-        console.log(product)
-      }
-
-
-
-
-      }).catch(error => {
+      .catch(error => {
         // catch and print the error
         console.log(error);
       })
