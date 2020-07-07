@@ -1,4 +1,4 @@
-const axios = require('axios');
+const axios = require("axios");
 
 // set up the request parameters
 
@@ -6,7 +6,7 @@ module.exports = {
   AmazonFind: function(req) {
     
     const params = {
-      api_key: "A510E407AB624CB79E1B1EB2AC38C2D7",
+      api_key: "97C79A1E26C2423DACAFAD3348DB4E79",
       type: "search",
       amazon_domain: "amazon.com",
       search_term: req, //search term will be edited with user input
