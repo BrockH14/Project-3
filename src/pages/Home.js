@@ -32,7 +32,7 @@ class Home extends Component {
                                 {
                                 title: response.data.productTitle,
                                 image: response.data.imageUrlList[0],
-                                price: response.data.price,
+                                price: "$" + response.data.price,
                                 link: "https://www.walmart.com" + this.state.wq[i],
                                 store: "Walmart",
                                 uniqueKey: key++
