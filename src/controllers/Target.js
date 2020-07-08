@@ -1,4 +1,6 @@
 const axios = require("axios");
+// import TargetApiKey from "../../server"
+const TargetApiKey = process.env.REACT_APP_TARGET_API_KEY;
 module.exports = {
     TargetFind: function(req) {
         return axios({
@@ -7,7 +9,7 @@ module.exports = {
             "headers":{
             "content-type":"application/octet-stream",
             "x-rapidapi-host":"target-com-store-product-reviews-locations-data.p.rapidapi.com",
-            "x-rapidapi-key":"a60de64e9amshbc8b025a1d49262p15a2afjsn89c21e842c0c",
+            "x-rapidapi-key":TargetApiKey,
             "useQueryString":true
             },"params":{
             "sponsored":"1",
