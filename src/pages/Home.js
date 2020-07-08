@@ -26,12 +26,13 @@ class Home extends Component {
             const walmartArr = [];
             for (var i = 0; i < 15; i++) {
                 WalmartAPI2.WalmartFind(this.state.wq[i]).then(
+                    // eslint-disable-next-line no-loop-func
                     response => {
                             let product = 
                                 {
                                 title: response.data.productTitle,
                                 image: response.data.imageUrlList[0],
-                                price: response.data.price,
+                                price: "$" + response.data.price,
                                 link: "https://www.walmart.com" + this.state.wq[i],
                                 store: "Walmart",
                                 uniqueKey: key++
@@ -75,7 +76,7 @@ class Home extends Component {
                             title: response.data.products[i].title,
                             image: response.data.products[i].images[0].base_url + response.data.products[i].images[0].primary,
                             price: response.data.products[i].price.formatted_current_price,
-                            link: "target.com" + response.data.products[i].url,
+                            link: "https://www.target.com" + response.data.products[i].url,
                             storeName: "Target",
                             uniqueKey: i
                             }
