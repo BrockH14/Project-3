@@ -10,59 +10,69 @@ class Home extends Component {
     state = {
         saved: [],
         q: "",
+        wq: [],
         results: [],
-        amazonResults: []
-
-        //wq: [],
-        //results: []
+        amazonResults: [],
+        walmartResults: []
     }
     getResults(){
         console.log(this.state.results);
         console.log(this.state.amazonResults);
+        console.log(this.state.walmartResults);
     }
+
     getWalmart(){
-        console.log(this.state.wq);
+        //console.log(this.state.wq);
         
+            const walmartArr = [];
+
             WalmartAPI2.WalmartFind(this.state.wq).then(
                 response => {
+                    console.log(response);
+                    var key = 0;
+                    for (var i = 0; i < 15; i++) {
                         let product = 
                             {
                             title: response.data.productTitle,
                             image: response.data.imageUrlList[0],
                             price: response.data.price,
-                            link: "https://www.walmart.com" + this.state.wq
+                            link: "https://www.walmart.com" + this.state.wq,
+                            store: "Walmart",
+                            uniqueKey: key++
                             }
-                        //console.log(product)
+                        walmartArr.push(product);
                         this.setState({
-                            results: product
+                            walmartResults: walmartArr
                         })
                         this.getResults();
+                    }
             }).catch(err => console.log(err));
     }
-        
-    
+
     handleInputChange = event => {
         this.setState({ q: event.target.value });
     }
 
     handleFormSubmit = event => {
         event.preventDefault();
+
         WalmartAPI.WalmartFindURL(this.state.q)
         .then(
             res => {
                 console.log(res);
-                for (var i = 0; i < 25; i++) {
+                const urlArr = [];
+                for (var i = 0; i < 15; i++) {
                     let url = res.data.foundProducts[i]
+                    urlArr.push(url);
                     this.setState({
-                        wq: url
+                        wq: urlArr
                     })
                     this.getWalmart();
             }
         }).catch(err => console.log(err));
 
-
         const itemArr = [];
-      
+
         TargetAPI.TargetFind(this.state.q).then(
                 response => {
                     for (var i = 0; i < 15; i++) {
@@ -84,7 +94,6 @@ class Home extends Component {
                         this.getResults();
                       }
             }).catch(err => console.log(err));
-
         
         const amazonItemArr = [];
 
@@ -119,6 +128,7 @@ class Home extends Component {
                 <Cards 
                 results={this.state.results}
                 amazonResults={this.state.amazonResults}
+                walmartResults={this.state.walmartResults}
                 />
             </div>
     )
