@@ -4,7 +4,7 @@ import Cards from "../components/Cards";
 import WalmartAPI from "../controllers/Walmart";
 import WalmartAPI2 from "../controllers/Walmart2";
 import AmazonAPI from "../controllers/Amazon";
-import TargetAPI from "../controllers/Target"
+import TargetAPI from "../controllers/Target";
 
 class Home extends Component {
     state = {
@@ -112,7 +112,7 @@ class Home extends Component {
                     else{
                         console.log("no price");
                     }
-                    console.log(this.state.amazonResults)
+                    //console.log(this.state.amazonResults)
                 }
                 this.getResults();
             }).catch(err => console.log(err));
