@@ -45,6 +45,9 @@ input {
   box-shadow: 10px 10px 15px -5px lightgrey;
   margin-bottom: 2em;
 }
+.card:hover {
+  transform: scale(1.05);
+}
 .item-img {
   width: 16%;
   height: 16%;

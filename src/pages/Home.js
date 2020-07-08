@@ -16,37 +16,34 @@ class Home extends Component {
         walmartResults: []
     }
     getResults(){
-        console.log(this.state.results);
-        console.log(this.state.amazonResults);
-        console.log(this.state.walmartResults);
+        // console.log(this.state.results);
+        // console.log(this.state.amazonResults);
+        // console.log(this.state.walmartResults);
     }
 
     getWalmart(){
-        //console.log(this.state.wq);
-        
+            var key = 0;
             const walmartArr = [];
-
-            WalmartAPI2.WalmartFind(this.state.wq).then(
-                response => {
-                    console.log(response);
-                    var key = 0;
-                    for (var i = 0; i < 15; i++) {
-                        let product = 
-                            {
-                            title: response.data.productTitle,
-                            image: response.data.imageUrlList[0],
-                            price: response.data.price,
-                            link: "https://www.walmart.com" + this.state.wq,
-                            store: "Walmart",
-                            uniqueKey: key++
-                            }
-                        walmartArr.push(product);
-                        this.setState({
-                            walmartResults: walmartArr
-                        })
-                        this.getResults();
-                    }
-            }).catch(err => console.log(err));
+            for (var i = 0; i < 15; i++) {
+                WalmartAPI2.WalmartFind(this.state.wq[i]).then(
+                    // eslint-disable-next-line no-loop-func
+                    response => {
+                            let product = 
+                                {
+                                title: response.data.productTitle,
+                                image: response.data.imageUrlList[0],
+                                price: "$" + response.data.price,
+                                link: "https://www.walmart.com" + this.state.wq[i],
+                                store: "Walmart",
+                                uniqueKey: key++
+                                }
+                            walmartArr.push(product);
+                            this.setState({
+                                walmartResults: walmartArr
+                            })
+                }).catch(err => console.log(err));
+        }
+        this.getResults();
     }
 
     handleInputChange = event => {
@@ -55,20 +52,18 @@ class Home extends Component {
 
     handleFormSubmit = event => {
         event.preventDefault();
-
         WalmartAPI.WalmartFindURL(this.state.q)
         .then(
             res => {
-                console.log(res);
                 const urlArr = [];
                 for (var i = 0; i < 15; i++) {
                     let url = res.data.foundProducts[i]
                     urlArr.push(url);
                     this.setState({
                         wq: urlArr
-                    })
-                    this.getWalmart();
-            }
+                    })   
+                }
+            this.getWalmart();
         }).catch(err => console.log(err));
 
         const itemArr = [];
@@ -76,13 +71,12 @@ class Home extends Component {
         TargetAPI.TargetFind(this.state.q).then(
                 response => {
                     for (var i = 0; i < 15; i++) {
-                
                         let product = 
                             {
                             title: response.data.products[i].title,
                             image: response.data.products[i].images[0].base_url + response.data.products[i].images[0].primary,
                             price: response.data.products[i].price.formatted_current_price,
-                            link: "target.com" + response.data.products[i].url,
+                            link: "https://www.target.com" + response.data.products[i].url,
                             storeName: "Target",
                             uniqueKey: i
                             }
@@ -96,27 +90,35 @@ class Home extends Component {
             }).catch(err => console.log(err));
         
         const amazonItemArr = [];
-
+        let key = 0;
         AmazonAPI.AmazonFind(this.state.q).then(
             response => {
+                console.log(response);
                 for (var i = 0; i < 15; i++) {
-                    let amazonItem = {
-                        title: response.data.search_results[i].title,
-                        image: response.data.search_results[i].image,
-                        price: response.data.search_results[i].prices[0].raw,
-                        link: response.data.search_results[i].link,
-                        store: "Amazon",
-                        uniqueKey: i
-                      }
-                      amazonItemArr.push(amazonItem);
-                      this.setState({
-                          amazonResults: amazonItemArr
-                      })
-                      this.getResults();
+                    if (response.data.search_results[i].prices){
+                        let amazonItem = {
+                            title: response.data.search_results[i].title,
+                            image: response.data.search_results[i].image,
+                            price: response.data.search_results[i].prices[0].raw,
+                            link: response.data.search_results[i].link,
+                            store: "Amazon",
+                            uniqueKey: key++
+                        }
+                        amazonItemArr.push(amazonItem);
+                        this.setState({
+                            amazonResults: amazonItemArr
+                        })
+                    }
+                    else{
+                        console.log("no price");
+                    }
+                    console.log(this.state.amazonResults)
                 }
+                this.getResults();
             }).catch(err => console.log(err));
     }
-    
+
+
     render() {
         return (
             <div>

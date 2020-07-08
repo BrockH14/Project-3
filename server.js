@@ -6,7 +6,9 @@ const routes = require("./routes");
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-const GoogleApiKey = process.env.GOOGLE_API_KEY;
+const AmazonApiKey = process.env.REACT_APP_AMAZON_API_KEY;
+const WalmartApiKey = process.env.REACT_APP_WALMART_API_KEY;
+const TargetApiKey = process.env.REACT_APP_TARGET_API_KEY;
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
@@ -27,4 +29,6 @@ app.listen(PORT, function() {
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
 });
 
-module.export = GoogleApiKey;
+module.export = AmazonApiKey;
+module.export = WalmartApiKey;
+module.export = TargetApiKey;

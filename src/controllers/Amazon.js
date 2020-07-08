@@ -1,12 +1,13 @@
-const axios = require('axios');
-
+const axios = require("axios");
+const AmazonApiKey = process.env.REACT_APP_AMAZON_API_KEY;
+// import AmazonApiKey from "../../server"
 // set up the request parameters
 
 module.exports = {
   AmazonFind: function(req) {
     
     const params = {
-      api_key: "A510E407AB624CB79E1B1EB2AC38C2D7",
+      api_key: AmazonApiKey,
       type: "search",
       amazon_domain: "amazon.com",
       search_term: req, //search term will be edited with user input
