@@ -5,7 +5,7 @@ function Form(props) {
     <div className="my-container">
         <form>
             <div className="row">
-                <div className="col-11">
+                <div className="col-9 offset-sm-1 text-center">
                     <input id="name"
                      value={props.q} 
                      className="input-group" 
@@ -16,7 +16,7 @@ function Form(props) {
                      required
                      ></input>
                 </div>
-                <div className="col-1">
+                <div className="col-2">
                     <button 
                     className="btn btn-primary btn-sm"
                     type="submit" 

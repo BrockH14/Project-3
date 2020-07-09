@@ -24,12 +24,14 @@
 
 .hero h1, .hero h2 {
   color: white;
+  padding-bottom: 70px;
 }
 
 .hero h1 {
   font-size: 60px;
-  padding-top: 200px;
-  margin-top: 0;
+  padding-top: 150px;
+  padding-bottom: 150px;
+  margin-top: ;
 }
 input {
   margin-bottom: 2.5em;
@@ -83,4 +85,87 @@ form {
 }
 #walmart-name {
   color: rgb(245, 170, 57);
+}
+
+/*About container*/
+
+.about-box {
+  padding-top: 10px;
+  text-align: center;
+}
+
+.about-box .about-box-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto;
+  font-size: 40px;
+  color: #fff;
+  line-height: 80px;
+  text-align: center;
+  border-radius: 28px;
+  background: -moz-linear-gradient(top,  #51eef3 0%, #9b59b6 100%); /* FF3.6+ */
+  background: -webkit-linear-gradient(top,  #67f1df 0%,#9b59b6 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #4decf1 0%,#9b59b6 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #67dbff 0%,#9b59b6 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #5ef8f8 0%,#87529c 100%); /* W3C */
+  
+}
+
+.about-box h3 {
+  margin-top: 0;
+  padding: 0 0 10px 0;
+}
+
+/* Footer */
+
+#footer {
+  background-color: #3a8a7f;
+  color:white;
+}
+
+#footer .footer-copyright{
+  background-color: #3a8a7f;
+  padding-top:3px;
+  padding-bottom:3px;
+  text-align: center;
+}
+
+#footer .footer-copyright p{
+  margin:10px;
+  color: rgb(255, 255, 255);
+}
+
+#footer ul{
+  list-style-type: none;
+    padding-left: 0;
+    line-height: 1.7;
+
+}
+
+#footer h5{
+  font-size: 18px;
+    color: white;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+#footer a{
+  color:#d2d1d1;
+  text-decoration: none;
+}
+
+#footer a:hover, #myFooter a:focus{
+  text-decoration: none;
+  color:white;
+}
+
+#footer .myCols{
+  text-align: center;
+  background-color: #3a8a7f;
+}
+
+#footer .myColsrow{
+  background-color: #373a48;
+  width: 100%;
+  margin-top: -20px;
 }
