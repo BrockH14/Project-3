@@ -2,7 +2,7 @@ const path = require("path");
 const router = require("express").Router();
 const savedRoutes = require("./saved");
 
-// Book routes
+// Save routes
 router.use("/saved", savedRoutes);
 
 // For anything else, render the html page

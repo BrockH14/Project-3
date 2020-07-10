@@ -1,13 +1,9 @@
 import axios from "axios";
 
 export default {
-  // Gets from the Google API
-  get: function(q) {
-    return axios.get("/api/google", { params: { q: "name:" + q } });
-  },
   // Gets all
   getSaved: function() {
-    return axios.get("/api/");
+    return axios.get("/api/saved");
   },
   // Gets with the given id
   getSavedById: function(id) {

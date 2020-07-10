@@ -3,10 +3,11 @@ const Schema = mongoose.Schema;
 
 const savedSchema = new Schema({
   id: Number,
-  name: String,
-  price: Number,
+  title: String,
+  price: String,
   image: String,
-  post_date: { type: Date, default: Date.now }
+  link: String,
+  store: String
 });
 
 const Saved = mongoose.model("Saved", savedSchema);

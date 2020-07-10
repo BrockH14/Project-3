@@ -5,6 +5,7 @@ import WalmartAPI from "../controllers/Walmart";
 import WalmartAPI2 from "../controllers/Walmart2";
 import AmazonAPI from "../controllers/Amazon";
 import TargetAPI from "../controllers/Target";
+import API from "../utils/API";
 
 class Home extends Component {
     state = {
@@ -13,7 +14,8 @@ class Home extends Component {
         wq: [],
         results: [],
         amazonResults: [],
-        walmartResults: []
+        walmartResults: [],
+        uniqueKey: 0,
     }
     getResults(){
         // console.log(this.state.results);
@@ -22,7 +24,7 @@ class Home extends Component {
     }
 
     getWalmart(){
-            var key = 0;
+            
             const walmartArr = [];
             for (var i = 0; i < 15; i++) {
                 WalmartAPI2.WalmartFind(this.state.wq[i]).then(
@@ -35,7 +37,7 @@ class Home extends Component {
                                 price: "$" + response.data.price,
                                 link: "https://www.walmart.com" + this.state.wq[i],
                                 store: "Walmart",
-                                uniqueKey: key++
+                                uniqueKey: this.state.uniqueKey++
                                 }
                             walmartArr.push(product);
                             this.setState({
@@ -78,7 +80,7 @@ class Home extends Component {
                             price: response.data.products[i].price.formatted_current_price,
                             link: "https://www.target.com" + response.data.products[i].url,
                             storeName: "Target",
-                            uniqueKey: i
+                            uniqueKey: this.state.uniqueKey++
                             }
                         itemArr.push(product);
                         //console.log(product)
@@ -90,7 +92,6 @@ class Home extends Component {
             }).catch(err => console.log(err));
         
         const amazonItemArr = [];
-        let key = 0;
         AmazonAPI.AmazonFind(this.state.q).then(
             response => {
                 console.log(response);
@@ -102,7 +103,7 @@ class Home extends Component {
                             price: response.data.search_results[i].prices[0].raw,
                             link: response.data.search_results[i].link,
                             store: "Amazon",
-                            uniqueKey: key++
+                            uniqueKey: this.state.uniqueKey++
                         }
                         amazonItemArr.push(amazonItem);
                         this.setState({
@@ -117,7 +118,41 @@ class Home extends Component {
                 this.getResults();
             }).catch(err => console.log(err));
     }
-
+handleFormSaveA = data => {
+    console.log("its running handle save");
+    console.log(data);
+    API.save({
+        id: data.uniqueKey,
+        title: data.title,
+        price: data.price,
+        image: data.image,
+        link: data.link,
+        store: data.store
+      })
+        .catch(err => console.log(err));
+}
+handleFormSaveT = data => {
+    console.log("its running handle save");
+    API.save({
+        id: data.uniqueKey,
+        title: data.title,
+        price: data.price,
+        image: data.image,
+        link: data.link
+      })
+        .catch(err => console.log(err));
+}
+handleFormSaveW = data => {
+    console.log("its running handle save");
+    API.save({
+        id: data.uniqueKey,
+        title: data.title,
+        price: data.price,
+        image: data.image,
+        link: data.link
+      })
+        .catch(err => console.log(err));
+}
 
     render() {
         return (
@@ -131,6 +166,9 @@ class Home extends Component {
                 results={this.state.results}
                 amazonResults={this.state.amazonResults}
                 walmartResults={this.state.walmartResults}
+                handleFormSaveA={this.handleFormSaveA}
+                handleFormSaveT={this.handleFormSaveT}
+                handleFormSaveW={this.handleFormSaveW}
                 />
             </div>
     )

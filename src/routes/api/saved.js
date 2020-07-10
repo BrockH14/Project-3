@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const savedCon = require("../../controllers/savedCon");
+const savedCon = require("../../client/src/controllers");
 
 // Matches with "/api/saved"
 router.route("/")
