@@ -1,12 +1,39 @@
-import React from "react";
+import React, {Component} from "react";
+import Card, { Logo } from "../components/Card";
+import API from "../utils/API";
 
 
-function Profile() {
-    return (
-        <div>
-            
-        </div>
-    )
+class Profile extends Component {
+    state = {
+        savedItem: [],
+        results: [],
+    }
+    componentDidMount() {
+        this.load();
+      }
+    load = () => {
+        API.getSaved()
+        .then(res =>
+            this.setState({results: res.data})
+            )
+    }
+    handleFormDel = data => {
+        API.delete(data._id)
+        .then(res => this.load())
+        .catch(err => console.log(err));
+    }
+
+    render() {
+        return (
+            <div>
+                <Card
+                results={this.state.results}
+                handleFormDel={this.handleFormDel}
+                />
+            </div>
+        )
+    }
+
 }
 
 export default Profile;

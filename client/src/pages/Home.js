@@ -37,6 +37,7 @@ class Home extends Component {
                                 price: "$" + response.data.price,
                                 link: "https://www.walmart.com" + this.state.wq[i],
                                 store: "Walmart",
+                                storeLogo: "fas fa-star-of-life walmart-name",
                                 uniqueKey: this.state.uniqueKey++
                                 }
                             walmartArr.push(product);
@@ -80,6 +81,7 @@ class Home extends Component {
                             price: response.data.products[i].price.formatted_current_price,
                             link: "https://www.target.com" + response.data.products[i].url,
                             store: "Target",
+                            storeLogo: "fas fa-bullseye target-logo",
                             uniqueKey: this.state.uniqueKey++
                             }
                         itemArr.push(product);
@@ -101,6 +103,7 @@ class Home extends Component {
                             price: response.data.search_results[i].prices[0].raw,
                             link: response.data.search_results[i].link,
                             store: "Amazon",
+                            storeLogo: "fab fa-amazon",
                             uniqueKey: this.state.uniqueKey++
                         }
                         amazonItemArr.push(amazonItem);
@@ -122,7 +125,8 @@ handleFormSaveA = data => {
         price: data.price,
         image: data.image,
         link: data.link,
-        store: data.store
+        store: data.store,
+        storeLogo: data.storeLogo
       })
         .catch(err => console.log(err));
 }
@@ -133,7 +137,8 @@ handleFormSaveT = data => {
         price: data.price,
         image: data.image,
         link: data.link,
-        store: data.store
+        store: data.store,
+        storeLogo: data.storeLogo
       })
         .catch(err => console.log(err));
 }
@@ -144,7 +149,8 @@ handleFormSaveW = data => {
         price: data.price,
         image: data.image,
         link: data.link,
-        store: data.store
+        store: data.store,
+        storeLogo: data.storeLogo
       })
         .catch(err => console.log(err));
 }

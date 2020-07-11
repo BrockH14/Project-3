@@ -7,7 +7,8 @@ const savedSchema = new Schema({
   price: String,
   image: String,
   link: String,
-  store: String
+  store: String,
+  storeLogo: String
 });
 
 const Saved = mongoose.model("Saved", savedSchema);

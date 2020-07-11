@@ -8,7 +8,7 @@ function Cards(props) {
                     {props.results.map(result => (
                         <div key={result.uniqueKey} className="card text-center">
                             <div className="card-header">
-                                <h3><i className="fas fa-bullseye target-logo"></i> {result.storeName}</h3>
+                                <h3><i className="fas fa-bullseye target-logo"></i> {result.store}</h3>
                             </div>
                             <img src={result.image} className="card-img-top item-img" alt="Target Item"></img>
                             <div className="card-body">
@@ -25,7 +25,7 @@ function Cards(props) {
                     {props.amazonResults.map(result => (
                         <div key={result.uniqueKey} className="card text-center">
                             <div className="card-header">
-                                <h3><i className="fab fa-amazon"></i></h3>
+                                <h3><i className="fab fa-amazon"></i>Amazon</h3>
                             </div>
                             <img src={result.image} className="card-img-top item-img" alt="Amazon Item"></img>
                             <div className="card-body">
@@ -42,7 +42,7 @@ function Cards(props) {
                     {props.walmartResults.map(result => (
                         <div key={result.uniqueKey} className="card text-center">
                             <div className="card-header">
-                                <h3 id="walmart-name">Walmart</h3>
+                                <h3><i id="walmart-name" className="fas fa-star-of-life"></i>Walmart</h3>
                             </div>
                             <img src={result.image} className="card-img-top item-img" alt="Amazon Item"></img>
                             <div className="card-body">
