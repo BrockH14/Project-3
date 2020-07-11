@@ -79,11 +79,10 @@ class Home extends Component {
                             image: response.data.products[i].images[0].base_url + response.data.products[i].images[0].primary,
                             price: response.data.products[i].price.formatted_current_price,
                             link: "https://www.target.com" + response.data.products[i].url,
-                            storeName: "Target",
+                            store: "Target",
                             uniqueKey: this.state.uniqueKey++
                             }
                         itemArr.push(product);
-                        //console.log(product)
                         this.setState({
                             results: itemArr
                         })
@@ -94,7 +93,6 @@ class Home extends Component {
         const amazonItemArr = [];
         AmazonAPI.AmazonFind(this.state.q).then(
             response => {
-                console.log(response);
                 for (var i = 0; i < 15; i++) {
                     if (response.data.search_results[i].prices){
                         let amazonItem = {
@@ -113,15 +111,12 @@ class Home extends Component {
                     else{
                         console.log("no price");
                     }
-                    //console.log(this.state.amazonResults)
                 }
                 this.getResults();
             }).catch(err => console.log(err));
     }
 handleFormSaveA = data => {
-    console.log("its running handle save");
-    console.log(data);
-    API.save({
+    API.saveItem({
         id: data.uniqueKey,
         title: data.title,
         price: data.price,
@@ -132,24 +127,24 @@ handleFormSaveA = data => {
         .catch(err => console.log(err));
 }
 handleFormSaveT = data => {
-    console.log("its running handle save");
-    API.save({
+    API.saveItem({
         id: data.uniqueKey,
         title: data.title,
         price: data.price,
         image: data.image,
-        link: data.link
+        link: data.link,
+        store: data.store
       })
         .catch(err => console.log(err));
 }
 handleFormSaveW = data => {
-    console.log("its running handle save");
-    API.save({
+    API.saveItem({
         id: data.uniqueKey,
         title: data.title,
         price: data.price,
         image: data.image,
-        link: data.link
+        link: data.link,
+        store: data.store
       })
         .catch(err => console.log(err));
 }
