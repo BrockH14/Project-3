@@ -1,14 +1,15 @@
 import React from "react";
+import "../App.css"
 
 function Card(props) {
   return (
     <div className="row">
-        <div className="col-12">
+        <div className="col-9">
             <div className="my-container">
                 {props.results.map(result => (
                     <div key={result.uniqueKey} className="card text-center">
                         <div className="card-header">
-                            <h3 className={result.storeLogo}> {result.store}</h3>
+                            <h3><i className={result.storeLogo}></i> {result.store}</h3>
                         </div>
                         <img src={result.image} className="card-img-top item-img" alt="Target Item"></img>
                         <div className="card-body">
