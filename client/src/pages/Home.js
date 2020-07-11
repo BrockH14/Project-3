@@ -6,6 +6,7 @@ import WalmartAPI2 from "../controllers/Walmart2";
 import AmazonAPI from "../controllers/Amazon";
 import TargetAPI from "../controllers/Target";
 import API from "../utils/API";
+import Jumbotron from "../components/Jumbotron";
 
 class Home extends Component {
     state = {
@@ -103,7 +104,7 @@ class Home extends Component {
                             price: response.data.search_results[i].prices[0].raw,
                             link: response.data.search_results[i].link,
                             store: "Amazon",
-                            storeLogo: "fab fa-amazon",
+                            storeLogo: "fab fa-amazon amazon-logo",
                             uniqueKey: this.state.uniqueKey++
                         }
                         amazonItemArr.push(amazonItem);
@@ -158,6 +159,11 @@ handleFormSaveW = data => {
     render() {
         return (
             <div>
+                <Jumbotron>
+                    <h1 className="display-4">Shopalooza</h1>
+                    <hr className="my-4"></hr>
+                    <p className="lead">Compare and Shop for all your favorite items!</p>
+                </Jumbotron>
                 <Form
                     handleInputChange={this.handleInputChange}
                     handleFormSubmit={this.handleFormSubmit}

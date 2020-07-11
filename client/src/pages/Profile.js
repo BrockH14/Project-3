@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import Card, { Logo } from "../components/Card";
 import API from "../utils/API";
+import Jumbotron from "../components/Jumbotron";
 
 
 class Profile extends Component {
@@ -26,6 +27,11 @@ class Profile extends Component {
     render() {
         return (
             <div>
+                <Jumbotron>
+                <h1 className="display-4">Shopalooza</h1>
+                <hr className="my-4"></hr>
+                <p className="lead">All your saved items!</p>
+                </Jumbotron>
                 <Card
                 results={this.state.results}
                 handleFormDel={this.handleFormDel}
