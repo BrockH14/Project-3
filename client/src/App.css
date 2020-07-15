@@ -1,3 +1,4 @@
+<<<<<<< HEAD:src/App.css
 .hero {
   height: ;
   background-size: cover;
@@ -32,6 +33,14 @@
   padding-top: 150px;
   padding-bottom: 150px;
   margin-top: ;
+=======
+.jumbotron {
+  margin: auto;
+  width: 90%;
+  box-shadow: 10px 10px 15px -5px lightgrey;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+>>>>>>> 6a3fba54ddf0404fd483d1f25c75dc6f05638723:client/src/App.css
 }
 input {
   margin-bottom: 2.5em;
@@ -62,6 +71,9 @@ input {
 .target-logo {
   color: red;
 }
+.amazon-logo {
+  color: rgb(15, 160, 217);
+}
 .item-desc {
   float: right !important;
 }
@@ -83,9 +95,10 @@ a {
 form {
   margin-top: 2em;
 }
-#walmart-name {
+.walmart-name {
   color: rgb(245, 170, 57);
 }
+<<<<<<< HEAD:src/App.css
 
 /*About container*/
 
@@ -169,3 +182,8 @@ form {
   width: 100%;
   margin-top: -20px;
 }
+=======
+.col-9 {
+  margin: auto 12%;
+}
+>>>>>>> 6a3fba54ddf0404fd483d1f25c75dc6f05638723:client/src/App.css

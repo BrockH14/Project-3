@@ -1,12 +1,12 @@
 const router = require("express").Router();
-const savedCon = require("../../controllers/savedCon");
+const savedCon = require("../../Controller/savedCon");
 
-// Matches with "/api/saved"
+// Matches with "/api/item"
 router.route("/")
   .get(savedCon.findAll)
   .post(savedCon.create);
 
-// Matches with "/api/saved/:id"
+// Matches with "/api/item/:id"
 router
   .route("/:id")
   .get(savedCon.findById)

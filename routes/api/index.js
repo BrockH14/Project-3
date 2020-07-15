@@ -1,13 +1,9 @@
 const path = require("path");
 const router = require("express").Router();
-const savedRoutes = require("./saved");
-const GoogleShopRoutes = require("./GoogleShop");
+const itemRoutes = require("./item");
 
-// Book routes
-router.use("/saved", savedRoutes);
-
-// Google Routes
-router.use("/GoogleShop", GoogleShopRoutes);
+// Save routes
+router.use("/item", itemRoutes);
 
 // For anything else, render the html page
 router.use(function(req, res) {

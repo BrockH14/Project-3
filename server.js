@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 mongoose.set('useCreateIndex', true);
 const routes = require("./routes");
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3002;
 
 const AmazonApiKey = process.env.REACT_APP_AMAZON_API_KEY;
 const WalmartApiKey = process.env.REACT_APP_WALMART_API_KEY;
