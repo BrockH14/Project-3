@@ -1,6 +1,6 @@
 import React from "react";
 
-function Navbar() {
+function Navbar({ children }) {
     return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <span className="navbar-brand">Backstreet Boiiss</span>
@@ -13,7 +13,7 @@ function Navbar() {
                 <a className="nav-link" href="/">Home <span className="sr-only">(current)</span></a>
             </li>
             <li className="nav-item">
-                <a className="nav-link" href="/profile">Profile</a>
+                {children}
             </li>
             <li className="nav-item">
                 <a className="nav-link" href="/login">Login</a>
@@ -27,4 +27,4 @@ function Navbar() {
     )
 }
 
-export default Navbar;
+export default Navbar

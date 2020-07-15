@@ -7,9 +7,10 @@ import AmazonAPI from "../controllers/Amazon";
 import TargetAPI from "../controllers/Target";
 import API from "../utils/API";
 import Jumbotron from "../components/Jumbotron";
-import About from "../components/About";
-import Hero from "../components/Hero";
-import Footer from "../components/Footer";
+import Navbar from "../components/Navbar";
+import LogoutButton from "../components/LogoutButton";
+import LoginButton from "../components/LoginButton";
+
 
 class Home extends Component {
     state = {
@@ -20,6 +21,13 @@ class Home extends Component {
         amazonResults: [],
         walmartResults: [],
         uniqueKey: 0,
+        isLoggedIn: false
+    }
+    handleLogin() {
+        this.setState({isLoggedIn: true})
+    }
+    handleLogout() {
+        this.setState({isLoggedIn: false})
     }
     getResults(){
         // console.log(this.state.results);
@@ -42,6 +50,7 @@ class Home extends Component {
                                 link: "https://www.walmart.com" + this.state.wq[i],
                                 store: "Walmart",
                                 storeLogo: "fas fa-star-of-life walmart-name",
+                                // eslint-disable-next-line
                                 uniqueKey: this.state.uniqueKey++
                                 }
                             walmartArr.push(product);
@@ -88,6 +97,7 @@ class Home extends Component {
                             link: "https://www.target.com" + response.data.products[i].url,
                             store: "Target",
                             storeLogo: "fas fa-bullseye target-logo",
+                            // eslint-disable-next-line
                             uniqueKey: this.state.uniqueKey++
                             }
                         itemArr.push(product);
@@ -110,6 +120,7 @@ class Home extends Component {
                             link: response.data.search_results[i].link,
                             store: "Amazon",
                             storeLogo: "fab fa-amazon amazon-logo",
+                            // eslint-disable-next-line
                             uniqueKey: this.state.uniqueKey++
                         }
                         amazonItemArr.push(amazonItem);
@@ -165,13 +176,20 @@ handleFormSaveW = data => {
 }
 
     render() {
+        
         return (
             <div>
-                <Hero backgroundImage="https://www.shelfwatch.com/wp-content/uploads/2015/04/shelf.jpg">
-                  <h1>Shopalooza</h1>
-                </Hero>
-                <br></br>
-                <About></About>
+                <Navbar>
+                    {this.state.isLoggedIn
+                    ? <LogoutButton onClick={this.handleLogout} />
+                    : <LoginButton onClick={this.handleLogin} />
+                    }
+                </Navbar>
+                <Jumbotron>
+                    <h1 className="display-4">Shopalooza</h1>
+                    <br />
+                    <p className="lead">Compare and Shop for all your favorite items!</p>
+                </Jumbotron>
                 <Form
                     handleInputChange={this.handleInputChange}
                     handleFormSubmit={this.handleFormSubmit}
