@@ -255,6 +255,7 @@ handleFormSaveA = data => {
         storeLogo: data.storeLogo
       })
         .catch(err => console.log(err));
+        alert("You saved an item!");
 }
 handleFormSaveT = data => {
     API.saveItem({
@@ -267,6 +268,7 @@ handleFormSaveT = data => {
         storeLogo: data.storeLogo
       })
         .catch(err => console.log(err));
+        alert("You saved an item!");
 }
 handleFormSaveW = data => {
     API.saveItem({
@@ -279,6 +281,7 @@ handleFormSaveW = data => {
         storeLogo: data.storeLogo
       })
         .catch(err => console.log(err));
+        alert("You saved an item!");
 }
 
     render() {
@@ -286,7 +289,7 @@ handleFormSaveW = data => {
             <div>
                 <Jumbotron>
                     <h1 className="display-4">Shopalooza</h1>
-                    <hr className="my-4"></hr>
+                    <br />
                     <p className="lead">Compare and Shop for all your favorite items!</p>
                 </Jumbotron>
                 <Form

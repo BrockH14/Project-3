@@ -4,10 +4,10 @@ function Cards(props) {
     return (
         <div className="row">
             <div className="col-4">
-                <div className="my-container">
+                <div className="container my-container">
                     {props.results.map(result => (
                         <div key={result.uniqueKey} className="card text-center">
-                            <div className="card-header">
+                            <div className="card-header target-header">
                                 <h3><i className="fas fa-bullseye target-logo"></i> {result.store}</h3>
                             </div>
                             <img src={result.image} className="card-img-top item-img" alt="Target Item"></img>
@@ -21,10 +21,10 @@ function Cards(props) {
                 </div>
             </div>
             <div className="col-4">
-                <div className="my-container">
+                <div className="container my-container">
                     {props.amazonResults.map(result => (
                         <div key={result.uniqueKey} className="card text-center">
-                            <div className="card-header">
+                            <div className="card-header amazon-header">
                                 <h3><i className="fab fa-amazon amazon-logo"></i> {result.store}</h3>
                             </div>
                             <img src={result.image} className="card-img-top item-img" alt="Amazon Item"></img>
@@ -38,10 +38,10 @@ function Cards(props) {
                 </div>
             </div>
             <div className="col-4">
-                <div className="my-container">
+                <div className="container my-container">
                     {props.walmartResults.map(result => (
                         <div key={result.uniqueKey} className="card text-center">
-                            <div className="card-header">
+                            <div className="card-header walmart-header">
                                 <h3><i className="fas fa-star-of-life walmart-name"></i> {result.store}</h3>
                             </div>
                             <img src={result.image} className="card-img-top item-img" alt="Amazon Item"></img>

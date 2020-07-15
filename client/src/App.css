@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <<<<<<< HEAD:src/App.css
 .hero {
   height: ;
@@ -34,35 +35,48 @@
   padding-bottom: 150px;
   margin-top: ;
 =======
+=======
+body {
+  background-color: rgb(238, 240, 243);
+}
+>>>>>>> cd1fa11890138a948982d3cf899b96c0c4e663db
 .jumbotron {
   margin: auto;
   width: 90%;
-  box-shadow: 10px 10px 15px -5px lightgrey;
+  box-shadow: 0px 3px 6px 0px darkgray;
   margin-top: 1.5em;
   margin-bottom: 1.5em;
+<<<<<<< HEAD
 >>>>>>> 6a3fba54ddf0404fd483d1f25c75dc6f05638723:client/src/App.css
+=======
+  background-image: url("https://cdn3.iconfinder.com/data/icons/black-friday-astute-vol-1/512/Compare_Prices-512.png");
+  background-repeat: no-repeat;
+  background-size: 20%;
+  background-position: right 25%;
+  background-color: white;
+>>>>>>> cd1fa11890138a948982d3cf899b96c0c4e663db
 }
 input {
   margin-bottom: 2.5em;
-  box-shadow: 10px 10px 15px -5px lightgrey;
+  box-shadow: 0px 3px 6px 0px darkgray;
   border: lightgrey solid 1px;
   border-radius: 4px;
 }
 .my-container {
   margin: auto;
-  width: 90%;
+  width: 77%;
 }
 .card {
-  box-shadow: 10px 10px 15px -5px lightgrey;
+  box-shadow: 0px 3px 6px 0px darkgray;
   margin-bottom: 2em;
 }
 .card:hover {
   transform: scale(1.05);
 }
 .item-img {
-  width: 16%;
-  height: 16%;
-  margin: auto 41%;
+  width: 30%;
+  height: 30%;
+  margin: auto 37%;
   margin-top: 5px;
 }
 .item-price {
@@ -72,13 +86,13 @@ input {
   color: red;
 }
 .amazon-logo {
-  color: rgb(15, 160, 217);
+  color: rgb(253, 140, 36);
 }
 .item-desc {
   float: right !important;
 }
 .card-body {
-  padding: 0px;
+  padding: 1px;
   margin-bottom: -10px;
 }
 a {
@@ -88,9 +102,9 @@ a {
   position: relative;
   bottom: 2px;
   margin-bottom: 2.5em;
-  box-shadow: 10px 10px 15px -5px lightgrey;
   border: lightgrey solid 1px;
   border-radius: 4px;
+  background-color: rgb(253, 60, 64) !important;
 }
 form {
   margin-top: 2em;
@@ -186,4 +200,17 @@ form {
 .col-9 {
   margin: auto 12%;
 }
+<<<<<<< HEAD
 >>>>>>> 6a3fba54ddf0404fd483d1f25c75dc6f05638723:client/src/App.css
+=======
+.navbar {
+  background-color: rgb(253, 60, 64) !important;
+  box-shadow: 0px 3px 6px 0px darkgray;
+}
+.nav-link, .navbar-brand {
+  color: white !important;
+}
+.walmart-header {
+  color: rgb(4, 102, 190);
+}
+>>>>>>> cd1fa11890138a948982d3cf899b96c0c4e663db
