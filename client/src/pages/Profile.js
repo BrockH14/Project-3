@@ -29,7 +29,7 @@ class Profile extends Component {
             <div>
                 <Jumbotron>
                 <h1 className="display-4">Shopalooza</h1>
-                <hr className="my-4"></hr>
+                <br />
                 <p className="lead">All your saved items!</p>
                 </Jumbotron>
                 <Card
