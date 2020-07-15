@@ -7,6 +7,10 @@ import AmazonAPI from "../controllers/Amazon";
 import TargetAPI from "../controllers/Target";
 import API from "../utils/API";
 import Jumbotron from "../components/Jumbotron";
+import Navbar from "../components/Navbar";
+import LogoutButton from "../components/LogoutButton";
+import LoginButton from "../components/LoginButton";
+
 
 class Home extends Component {
     state = {
@@ -17,6 +21,13 @@ class Home extends Component {
         amazonResults: [],
         walmartResults: [],
         uniqueKey: 0,
+        isLoggedIn: false
+    }
+    handleLogin() {
+        this.setState({isLoggedIn: true})
+    }
+    handleLogout() {
+        this.setState({isLoggedIn: false})
     }
     getResults(){
         // console.log(this.state.results);
@@ -39,6 +50,7 @@ class Home extends Component {
                                 link: "https://www.walmart.com" + this.state.wq[i],
                                 store: "Walmart",
                                 storeLogo: "fas fa-star-of-life walmart-name",
+                                // eslint-disable-next-line
                                 uniqueKey: this.state.uniqueKey++
                                 }
                             walmartArr.push(product);
@@ -83,6 +95,7 @@ class Home extends Component {
                             link: "https://www.target.com" + response.data.products[i].url,
                             store: "Target",
                             storeLogo: "fas fa-bullseye target-logo",
+                            // eslint-disable-next-line
                             uniqueKey: this.state.uniqueKey++
                             }
                         itemArr.push(product);
@@ -105,6 +118,7 @@ class Home extends Component {
                             link: response.data.search_results[i].link,
                             store: "Amazon",
                             storeLogo: "fab fa-amazon amazon-logo",
+                            // eslint-disable-next-line
                             uniqueKey: this.state.uniqueKey++
                         }
                         amazonItemArr.push(amazonItem);
@@ -160,8 +174,15 @@ handleFormSaveW = data => {
 }
 
     render() {
+        
         return (
             <div>
+                <Navbar>
+                    {this.state.isLoggedIn
+                    ? <LogoutButton onClick={this.handleLogout} />
+                    : <LoginButton onClick={this.handleLogin} />
+                    }
+                </Navbar>
                 <Jumbotron>
                     <h1 className="display-4">Shopalooza</h1>
                     <br />

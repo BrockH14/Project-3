@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import Card, { Logo } from "../components/Card";
 import API from "../utils/API";
 import Jumbotron from "../components/Jumbotron";
+import Navbar from "../components/Navbar";
 
 
 class Profile extends Component {
@@ -27,6 +28,7 @@ class Profile extends Component {
     render() {
         return (
             <div>
+                <Navbar />
                 <Jumbotron>
                 <h1 className="display-4">Shopalooza</h1>
                 <br />

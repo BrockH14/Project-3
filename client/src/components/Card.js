@@ -15,7 +15,7 @@ function Card(props) {
                         <div className="card-body">
                                 <a rel="noopener noreferrer" target="_blank" href={result.link}><h5 className="card-title">{result.title}</h5></a>
                                 <h4 className="card-title item-price">{result.price}</h4>
-                                <a><button onClick={() => props.handleFormDel(result)} className="btn btn-danger">Delete Item</button></a>
+                                <button onClick={() => props.handleFormDel(result)} className="btn btn-danger">Delete Item</button>
                         </div>
                     </div>
                 ))}

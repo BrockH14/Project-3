@@ -14,7 +14,7 @@ function Cards(props) {
                             <div className="card-body">
                                     <a rel="noopener noreferrer" target="_blank" href={result.link}><h5 className="card-title">{result.title}</h5></a>
                                     <h4 className="card-title item-price">{result.price}</h4>
-                                    <a><button onClick={() => props.handleFormSaveT(result)} className="btn btn-primary">Save Item</button></a>
+                                    <button onClick={() => props.handleFormSaveT(result)} className="btn btn-primary">Save Item</button>
                             </div>
                         </div>
                     ))}
@@ -31,7 +31,7 @@ function Cards(props) {
                             <div className="card-body">
                                 <a rel="noopener noreferrer" target="_blank" href={result.link}><h5 className="card-title">{result.title}</h5></a>
                                 <h4 className="card-title item-price">{result.price}</h4>
-                                <a><button onClick={() => props.handleFormSaveA(result)} className="btn btn-primary">Save Item</button></a>
+                                <button onClick={() => props.handleFormSaveA(result)} className="btn btn-primary">Save Item</button>
                             </div>
                         </div>
                     ))}
@@ -48,7 +48,7 @@ function Cards(props) {
                             <div className="card-body">
                                 <a rel="noopener noreferrer" target="_blank" href={result.link}><h5 className="card-title">{result.title}</h5></a>
                                 <h4 className="card-title item-price">{result.price}</h4>
-                                <a><button onClick={() => props.handleFormSaveW(result)} className="btn btn-primary">Save Item</button></a>
+                                <button onClick={() => props.handleFormSaveW(result)} className="btn btn-primary">Save Item</button>
                             </div>
                         </div>
                     ))}
