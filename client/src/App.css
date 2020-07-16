@@ -1,6 +1,5 @@
 
 .hero {
-  height: ;
   background-size: cover;
   background-position: center;
   position: relative;
@@ -165,7 +164,6 @@ form {
   font-size: 18px;
     color: white;
     font-weight: bold;
-    margin-top: 30px;
 }
 
 #footer a{
@@ -186,9 +184,9 @@ form {
 #footer .myColsrow{
   background-color: #373a48;
   width: 100%;
-  margin-top: -20px;
+  margin-top: 30px;
 }
-=======
+
 .col-9 {
   margin: auto 12%;
 }

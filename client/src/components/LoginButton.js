@@ -2,7 +2,7 @@ import React from "react";
 
 function LoginButton() {
     return (
-        <a className="nav-link" href="/profile">Login</a>
+        <a className="nav-link" href="/login">Login</a>
     );
 }
 

@@ -16,10 +16,10 @@ function Navbar({ children }) {
                 {children}
             </li>
             <li className="nav-item">
-                <a className="nav-link" href="/login">Login</a>
+                <a className="nav-link" href="/register">Register</a>
             </li>
             <li className="nav-item">
-                <a className="nav-link" href="/register">Register</a>
+                <a className="nav-link" href="/profile">Saved Items</a>
             </li>
             </ul>
         </div>
