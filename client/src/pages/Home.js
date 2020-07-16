@@ -60,29 +60,31 @@ class Home extends Component {
                 }).catch(err => console.log(err));
         }
         this.getResults();
-    }
+    
+    
+  }
 
-    handleInputChange = event => {
-        this.setState({ q: event.target.value });
-    }
+  handleInputChange = (event) => {
+    this.setState({ q: event.target.value });
+  };
 
-    handleFormSubmit = event => {
-        event.preventDefault();
-        WalmartAPI.WalmartFindURL(this.state.q)
-        .then(
-            res => {
-                const urlArr = [];
-                for (var i = 0; i < 15; i++) {
-                    let url = res.data.foundProducts[i]
-                    urlArr.push(url);
-                    this.setState({
-                        wq: urlArr
-                    })   
-                }
-            this.getWalmart();
-        }).catch(err => console.log(err));
+  handleFormSubmit = (event) => {
+    event.preventDefault();
+    WalmartAPI.WalmartFindURL(this.state.q)
+      .then((res) => {
+        const urlArr = [];
+        for (var i = 0; i < 15; i++) {
+          let url = res.data.foundProducts[i];
+          urlArr.push(url);
+          this.setState({
+            wq: urlArr,
+          });
+        }
+        this.getWalmart();
+      })
+      .catch((err) => console.log(err));
 
-        const itemArr = [];
+    const itemArr = [];
 
         TargetAPI.TargetFind(this.state.q).then(
                 response => {
@@ -201,6 +203,9 @@ handleFormSaveW = data => {
                 handleFormSaveT={this.handleFormSaveT}
                 handleFormSaveW={this.handleFormSaveW}
                 />
+                <br></br>
+                <br></br>
+                <Footer></Footer>
             </div>
     )
     }
