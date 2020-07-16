@@ -10,6 +10,7 @@ import Jumbotron from "../components/Jumbotron";
 import Navbar from "../components/Navbar";
 import LogoutButton from "../components/LogoutButton";
 import LoginButton from "../components/LoginButton";
+import Footer from "../components/Footer";
 
 
 class Home extends Component {
