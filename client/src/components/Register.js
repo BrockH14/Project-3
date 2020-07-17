@@ -9,20 +9,14 @@ function Register(props) {
             <Navbar />
             <div className="register-user">
                 <div className="form-container">
-                    <form method="post" action="/register">
-                        <h2 className="text-center">Register</h2>
-                        <div className="form-group">
-                            <label form="name">Name</label> <input type="text" className="form-control" id="name" name="name" placeholder="Name"></input>
-                        </div>
-                        <div className="form-group">
-                            <label form="email">Email</label> <input type="email" className="form-control" id="email" placeholder="Email"></input>
-                        </div>
-                        <div className="form-group">
-                            <label form="password">Password</label><input type="password" className="form-control" id="password" placeholder="Password"></input>
-                        </div>
-                        <div className="form-group">
-                            <button className="btn btn-primary btn-block" type="submit">Sign Up</button>
-                        </div>
+                    <form class="pure-form" method="post" action="/register">
+                    <h2 className="text-center">Register</h2>
+                        <fieldset class="pure-group">
+                            <input type="text" class="pure-input-1" placeholder="Username" />
+                            <input type="text" class="pure-input-1" placeholder="Password" />
+                            <input type="email" class="pure-input-1" placeholder="Email" />
+                        </fieldset>
+                        <button type="submit" class="pure-button pure-input-1 pure-button-primary">Sign in</button>
                     </form>
                 </div>
             </div>

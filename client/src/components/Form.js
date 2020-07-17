@@ -3,12 +3,12 @@ import React from "react";
 function Form(props) {
   return (
     <div className="my-container">
-        <form>
+        <form class="pure-form">
             <div className="row">
                 <div className="col-11">
                     <input id="name"
                      value={props.q} 
-                     className="input-group" 
+                     className="input-group pure-input-rounded" 
                      type="text" 
                      placeholder="Search..." 
                      name="q"
