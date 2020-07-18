@@ -3,7 +3,7 @@ import React from "react";
 function Footer(props) {
     return (
         <div className="wrapper">
-            <footer id="footer">
+            <footer className="fixed-bottom" id="footer">
                 <div class="container myColsrow">
                     <div class="row">
                         <div class="col-sm-3 myCols">

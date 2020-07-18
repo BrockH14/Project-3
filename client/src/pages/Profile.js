@@ -1,8 +1,9 @@
 import React, {Component} from "react";
-import Card, { Logo } from "../components/Card";
+import Card from "../components/Card";
 import API from "../utils/API";
 import Jumbotron from "../components/Jumbotron";
 import Navbar from "../components/Navbar";
+// import Footer from "../components/Footer"
 
 
 class Profile extends Component {

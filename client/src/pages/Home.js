@@ -10,7 +10,8 @@ import Jumbotron from "../components/Jumbotron";
 import Navbar from "../components/Navbar";
 import LogoutButton from "../components/LogoutButton";
 import LoginButton from "../components/LoginButton";
-import Footer from "../components/Footer";
+// import Footer from "../components/Footer"
+// import { useAuth0 } from "@auth0/auth0-react";
 
 
 class Home extends Component {
@@ -23,12 +24,6 @@ class Home extends Component {
         walmartResults: [],
         uniqueKey: 0,
         isLoggedIn: false
-    }
-    handleLogin() {
-        this.setState({isLoggedIn: true})
-    }
-    handleLogout() {
-        this.setState({isLoggedIn: false})
     }
     getResults(){
         // console.log(this.state.results);
@@ -175,7 +170,14 @@ handleFormSaveW = data => {
         .catch(err => console.log(err));
         alert("You saved an item!");
 }
-
+handleLogin  = (event) => {
+    event.preventDefault();
+    this.setState({isLoggedIn: true})
+}
+handleLogout  = (event) => {
+    event.preventDefault();
+    this.setState({isLoggedIn: false})
+}
     render() {
         
         return (
@@ -206,7 +208,6 @@ handleFormSaveW = data => {
                 />
                 <br></br>
                 <br></br>
-                <Footer></Footer>
             </div>
     )
     }

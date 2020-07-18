@@ -139,6 +139,7 @@ form {
 #footer {
   background-color: rgb(253, 60, 64);
   color:white;
+  position: sticky;
 }
 
 #footer .footer-copyright{

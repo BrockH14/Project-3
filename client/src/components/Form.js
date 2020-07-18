@@ -3,7 +3,7 @@ import React from "react";
 function Form(props) {
   return (
     <div className="my-container">
-        <form class="pure-form">
+        <form className="pure-form">
             <div className="row">
                 <div className="col-11">
                     <input id="name"
