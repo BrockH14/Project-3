@@ -282,4 +282,13 @@ form {
   width: 60%;
   margin: auto;
 }
-
+.search-btn {
+  border-radius: 5em;
+}
+#qsLoginBtn {
+  position: relative;
+  top: 1em;
+}
+.navbar {
+  padding: 0%;
+}

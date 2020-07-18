@@ -68,9 +68,11 @@ const NavBar = () => {
 
   return (
     <div className="nav-container">
-      <Navbar color="light" light expand="md">
+      <Navbar className="navbar navbar-expand navbar-light bg-light">
         <Container>
-          <NavbarBrand className="logo" />
+          <NavbarBrand className="navbar-brand">
+                <span class="navbar-brand mb-0 h1">Shopalooza</span>
+            </NavbarBrand>
           <NavbarToggler onClick={toggle} />
           <Collapse isOpen={isOpen} navbar>
             <Nav className="mr-auto" navbar>
@@ -80,6 +82,7 @@ const NavBar = () => {
                   to="/"
                   exact
                   activeClassName="router-link-exact-active"
+                  className="navbar-brand"
                 >
                   Home
                 </NavLink>
@@ -103,7 +106,6 @@ const NavBar = () => {
                   <Button
                     id="qsLoginBtn"
                     color="primary"
-                    className="btn-margin"
                     onClick={() => loginWithRedirect()}
                   >
                     Log in
