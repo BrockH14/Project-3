@@ -10,9 +10,6 @@ import Jumbotron from "../components/Jumbotron";
 import Navbar from "../components/Navbar";
 import LogoutButton from "../components/LogoutButton";
 import LoginButton from "../components/LoginButton";
-// import Footer from "../components/Footer"
-// import { useAuth0 } from "@auth0/auth0-react";
-
 
 class Home extends Component {
     state = {
@@ -24,11 +21,6 @@ class Home extends Component {
         walmartResults: [],
         uniqueKey: 0,
         isLoggedIn: false
-    }
-    getResults(){
-        // console.log(this.state.results);
-        // console.log(this.state.amazonResults);
-        // console.log(this.state.walmartResults);
     }
 
     getWalmart(){
@@ -55,9 +47,6 @@ class Home extends Component {
                             })
                 }).catch(err => console.log(err));
         }
-        this.getResults();
-    
-    
   }
 
   handleInputChange = (event) => {
@@ -100,7 +89,6 @@ class Home extends Component {
                         this.setState({
                             results: itemArr
                         })
-                        this.getResults();
                       }
             }).catch(err => console.log(err));
         
@@ -128,7 +116,6 @@ class Home extends Component {
                         console.log("no price");
                     }
                 }
-                this.getResults();
             }).catch(err => console.log(err));
     }
 handleFormSaveA = data => {
@@ -170,23 +157,11 @@ handleFormSaveW = data => {
         .catch(err => console.log(err));
         alert("You saved an item!");
 }
-handleLogin  = (event) => {
-    event.preventDefault();
-    this.setState({isLoggedIn: true})
-}
-handleLogout  = (event) => {
-    event.preventDefault();
-    this.setState({isLoggedIn: false})
-}
     render() {
         
         return (
             <div>
                 <Navbar>
-                    {this.state.isLoggedIn
-                    ? <LogoutButton onClick={this.handleLogout} />
-                    : <LoginButton onClick={this.handleLogin} />
-                    }
                 </Navbar>
                 <Jumbotron>
                     <h1 className="display-4">Shopalooza</h1>

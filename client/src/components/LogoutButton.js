@@ -1,11 +1,3 @@
-// import React from "react";
-// function LogoutButton() {
-//     return (
-//         <a className="nav-link" href="/profile">Logout</a>
-//     )
-// }
-// export default LogoutButton;
-
 import React from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 

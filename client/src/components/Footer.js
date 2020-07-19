@@ -4,9 +4,9 @@ function Footer(props) {
     return (
         <div className="wrapper">
             <footer className="fixed-bottom" id="footer">
-                <div class="container myColsrow">
-                    <div class="row">
-                        <div class="col-sm-3 myCols">
+                <div className="container myColsrow">
+                    <div className="row">
+                        <div className="col-sm-3 myCols">
                             <h5>Get started</h5>
                             <ul>
                                 <li><a href="#">Home</a></li>
@@ -14,7 +14,7 @@ function Footer(props) {
                                 <li><a href="#">Downloads</a></li>
                             </ul>
                         </div>
-                        <div class="col-sm-3 myCols">
+                        <div className="col-sm-3 myCols">
                             <h5>About us</h5>
                             <ul>
                                 <li><a href="#">Company Information</a></li>
@@ -22,7 +22,7 @@ function Footer(props) {
                                 <li><a href="#">Reviews</a></li>
                             </ul>
                         </div>
-                        <div class="col-sm-3 myCols">
+                        <div className="col-sm-3 myCols">
                             <h5>Support</h5>
                             <ul>
                                 <li><a href="#">FAQ</a></li>
@@ -30,7 +30,7 @@ function Footer(props) {
                                 <li><a href="#">Forums</a></li>
                             </ul>
                         </div>
-                        <div class="col-sm-3 myCols">
+                        <div className="col-sm-3 myCols">
                             <h5>Legal</h5>
                             <ul>
                                 <li><a href="#">Terms of Service</a></li>
@@ -40,7 +40,7 @@ function Footer(props) {
                         </div>
                     </div>
                 </div>
-                <div class="footer-copyright">
+                <div className="footer-copyright">
                     <p>© 2020 Copyright Text </p>
                 </div>
         </footer>
