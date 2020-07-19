@@ -18,7 +18,7 @@ function Form(props) {
                 </div>
                 <div className="col-1">
                     <button 
-                    className="btn btn-primary btn-sm"
+                    className="btn btn-primary search-btn"
                     type="submit" 
                     onClick={props.handleFormSubmit}
                     >Search</button>
