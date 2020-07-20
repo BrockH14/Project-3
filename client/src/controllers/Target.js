@@ -1,5 +1,4 @@
 const axios = require("axios");
-// import TargetApiKey from "../../server"
 const TargetApiKey = process.env.REACT_APP_TARGET_API_KEY;
 module.exports = {
     TargetFind: function(req) {

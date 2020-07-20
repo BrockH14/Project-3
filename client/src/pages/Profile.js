@@ -3,8 +3,6 @@ import Card from "../components/Card";
 import API from "../utils/API";
 import Jumbotron from "../components/Jumbotron";
 import Navbar from "../components/Navbar";
-// import Footer from "../components/Footer"
-
 
 class Profile extends Component {
     state = {
@@ -13,7 +11,7 @@ class Profile extends Component {
     }
     componentDidMount() {
         this.load();
-      }
+    }
     load = () => {
         API.getSaved()
         .then(res =>
@@ -42,7 +40,6 @@ class Profile extends Component {
             </div>
         )
     }
-
 }
 
 export default Profile;

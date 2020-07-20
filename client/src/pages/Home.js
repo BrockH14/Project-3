@@ -8,8 +8,6 @@ import TargetAPI from "../controllers/Target";
 import API from "../utils/API";
 import Jumbotron from "../components/Jumbotron";
 import Navbar from "../components/Navbar";
-import LogoutButton from "../components/LogoutButton";
-import LoginButton from "../components/LoginButton";
 
 class Home extends Component {
     state = {
@@ -24,7 +22,6 @@ class Home extends Component {
     }
 
     getWalmart(){
-            
             const walmartArr = [];
             for (var i = 0; i < 15; i++) {
                 WalmartAPI2.WalmartFind(this.state.wq[i]).then(
@@ -70,7 +67,6 @@ class Home extends Component {
       .catch((err) => console.log(err));
 
     const itemArr = [];
-
         TargetAPI.TargetFind(this.state.q).then(
                 response => {
                     for (var i = 0; i < 15; i++) {
@@ -158,7 +154,6 @@ handleFormSaveW = data => {
         alert("You saved an item!");
 }
     render() {
-        
         return (
             <div>
                 <Navbar>
@@ -184,8 +179,7 @@ handleFormSaveW = data => {
                 <br></br>
                 <br></br>
             </div>
-    )
-    }
+    )}
 }
 
 export default Home;

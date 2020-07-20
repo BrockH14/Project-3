@@ -1,5 +1,4 @@
 const axios = require("axios");
-// import WalmartApiKey from "../../server"
 const WalmartApiKey = process.env.REACT_APP_WALMART_API_KEY;
 
 module.exports = {

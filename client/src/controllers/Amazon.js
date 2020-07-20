@@ -1,6 +1,5 @@
 const axios = require("axios");
 const AmazonApiKey = process.env.REACT_APP_AMAZON_API_KEY;
-// import AmazonApiKey from "../../server"
 // set up the request parameters
 
 module.exports = {

@@ -1,10 +1,8 @@
 const axios = require("axios");
-// import WalmartApiKey from "../../server"
 const WalmartApiKey = process.env.REACT_APP_WALMART_API_KEY;
 
 module.exports = {
     WalmartFindURL: function(req) {
-
        return axios({
             "method":"GET",
             "url":"https://axesso-walmart-data-service.p.rapidapi.com/wlm/walmart-search-by-keyword",
